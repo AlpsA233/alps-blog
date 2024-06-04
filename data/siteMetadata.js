@@ -1,21 +1,21 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Azurtelier™',
-  author: 'Zixuan Chen (Amos)',
+  title: 'Alps2333™',
+  author: 'Alps(A阿尔)',
   headerTitle: '',
-  description: '阿梓的数字炼金工坊',
+  description: 'A阿尔的个人小站',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/AmosChenZixuan/amoschenzixuan.github.io',
+  siteRepo: 'https://github.com/AlpsA233/alps-blog',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/avatar.png',
   mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'zixuanchen1999@gmail.com',
-  github: 'https://github.com/amoschenzixuan',
-  linkedin: 'https://www.linkedin.com/in/amoschenzixuan/',
+  email: 'tianxiao233@outlook.com',
+  github: 'https://github.com/AlpsA233/',
+  linkedin: 'https://www.linkedin.com/in/yantianxiao/',
   // mastodon: 'https://mastodon.social/@mastodonuser',
-  twitter: 'https://twitter.com/Azurtelier',
+  twitter: 'https://x.com',
   // facebook: 'https://facebook.com',
   // youtube: 'https://youtube.com',
   // threads: 'https://www.threads.net',
@@ -61,13 +61,13 @@ const siteMetadata = {
       repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
       category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
       categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
-      mapping: 'pathname', // supported options: pathname, url, title
+      mapping: 'title', // supported options: pathname, url, title
       reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
       // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
+      theme: 'preferred_color_scheme',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`
@@ -94,4 +94,4 @@ const siteMetadata = {
   },
 }
 
-module.exports = siteMetadata
+export default siteMetadata
