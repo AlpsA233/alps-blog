@@ -13,7 +13,7 @@ const siteMetadata = {
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'tianxiao233@outlook.com',
   github: 'https://github.com/AlpsA233/',
-  linkedin: 'https://www.linkedin.com/in/yantianxiao/',
+  linkedin: 'https://www.linkedin.com/in/young-al-a08169307/',
   // mastodon: 'https://mastodon.social/@mastodonuser',
   twitter: 'https://x.com',
   // facebook: 'https://facebook.com',

@@ -17,7 +17,7 @@ export default function SpotifyPlayerBox() {
   }
 
   return (
-    <div className={`card bg-pink-blue min-w-[45%] overflow-hidden p-2`}>
+    <div className={`card bg-pink-blue min-w-[45%] flex-center flex-grow flex-row overflow-hidden p-2`}>
       {data?.songUrl && (
         <Link href={data.songUrl} className="flex flex-col">
           <div className="flex flex-wrap space-x-1">

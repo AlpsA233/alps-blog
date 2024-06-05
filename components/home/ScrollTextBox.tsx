@@ -1,5 +1,6 @@
 'use client'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import GitHubCalendar from "@/components/home/GithubCalendar";
 
 export default function ScrollTextBox() {
   const { scrollY } = useScroll()
@@ -10,10 +11,11 @@ export default function ScrollTextBox() {
 
   return (
     <div
-      className={`card bg-pink-blue-animated animation-delay-2 flex-center flex-grow flex-col space-y-5 overflow-hidden p-2`}
+      className={`card bg-pink-blue-animated animation-delay-2 flex-center flex-grow flex-row space-y-5 overflow-hidden p-2`}
     >
-      <h1 className="font-zzz2 text-white">Coming Soon</h1>
-      <motion.div className="bg-gray-purple h-8 w-8" style={{ scale, rotate, borderRadius }} />
+      {/*<h1 className="font-zzz2 text-white">Coming Soon</h1>*/}
+      {/*<motion.div className="bg-gray-purple h-8 w-8" style={{ scale, rotate, borderRadius }} />*/}
+      <GitHubCalendar className="transform text-white xl:scale-[1.2]" />
     </div>
   )
 }

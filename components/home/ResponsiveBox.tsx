@@ -29,8 +29,9 @@ export default function ResponsiveBox() {
         <div className={`flex ${getLayout(flex_row, flex_row, flex_col)} min-w-[45%]`}>
           <SpotifyPlayerBox />
           <ScrollTextBox />
+          {/*<GithubActivityBox />*/}
         </div>
-        <GithubActivityBox />
+        {/*<GithubActivityBox />*/}
       </div>
       {/*<GalleryPreviewBox />*/}
     </section>
