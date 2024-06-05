@@ -32,7 +32,7 @@ export default function ResponsiveBox() {
         </div>
         <GithubActivityBox />
       </div>
-      <GalleryPreviewBox />
+      {/*<GalleryPreviewBox />*/}
     </section>
   )
 }

@@ -9,7 +9,7 @@ const minimalTheme: ThemeInput = {
 }
 
 const DAYS = 98
-const USERNAME = 'amoschenzixuan'
+const USERNAME = 'AlpsA233'
 
 function selectLastNDays(contributions: Array<Activity>): Array<Activity> {
   return contributions.slice(-DAYS)
@@ -68,7 +68,7 @@ interface ApiErrorResponse {
 async function fetchCalendarData(username: string): Promise<ApiResponse> {
   const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`)
   const data: ApiResponse | ApiErrorResponse = await response.json()
-
+  console.log(data)
   if (!response.ok) {
     throw Error(`Error fetching GitHub activity: ${(data as ApiErrorResponse).error}`)
   }
