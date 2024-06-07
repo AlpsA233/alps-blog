@@ -32,9 +32,9 @@ const TypedBios = () => {
         <li key="2">
           {t('typed.Iam-a')} <b className="text-primary-300">{t('typed.swe')}</b>.
         </li>
-        <li key="3">
-          {t('typed.Iam-a')} <b className="text-primary-300">{t('typed.mle')}</b>.
-        </li>
+        {/*<li key="3">*/}
+        {/*  {t('typed.Iam-a')} <b className="text-primary-300">{t('typed.mle')}</b>.*/}
+        {/*</li>*/}
         <li key="4">
           {t('typed.Iam-a')} <b className="text-primary-300">{t('typed.gamer')}</b>.
         </li>
