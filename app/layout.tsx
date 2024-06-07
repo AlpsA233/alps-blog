@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang={siteMetadata.language}
-      className={`${zcool_kuaile.variable} ${orbitron.variable} scroll-smooth`}
+      className={`${pangolin.variable} ${zcool_kuaile.variable} ${orbitron.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
