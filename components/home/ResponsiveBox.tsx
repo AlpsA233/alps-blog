@@ -26,7 +26,7 @@ export default function ResponsiveBox() {
       <div
         className={`flex flex-grow justify-between ${getLayout(flex_col, flex_col, flex_row)} min-w-[75%]`}
       >
-        <div className={`flex ${getLayout(flex_row, flex_row, flex_col)} min-w-[45%]`}>
+        <div className={`flex ${getLayout(flex_col, flex_row, flex_row)} min-w-full`}>
           <SpotifyPlayerBox />
           <ScrollTextBox />
           {/*<GithubActivityBox />*/}
