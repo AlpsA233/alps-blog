@@ -1,6 +1,7 @@
 {
   "name": "tailwind-nextjs-starter-blog",
   "version": "2.2.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "start": "next dev",
