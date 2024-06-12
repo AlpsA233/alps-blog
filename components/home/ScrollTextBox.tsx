@@ -1,6 +1,6 @@
 'use client'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import GitHubCalendar from "@/components/home/GithubCalendar";
+import GitHubCalendar from '@/components/home/GithubCalendar'
 
 export default function ScrollTextBox() {
   const { scrollY } = useScroll()
