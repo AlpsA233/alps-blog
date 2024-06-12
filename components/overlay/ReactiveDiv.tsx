@@ -24,7 +24,7 @@ const ReactiveDiv: React.FC<ReactiveDivProps> = ({ isEnabled, className, childre
       return Math.min(10, Math.max(1, nextZoom))
     })
   }
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isEnabled) {
       setPosition({ x: 0, y: 0 })

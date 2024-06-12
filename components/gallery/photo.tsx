@@ -35,7 +35,7 @@ const Photo = ({ useOverlay = true, index = 0, ...rest }: OverlayImageProps) => 
   }
   rest.imagelist = rest.imagelist || [rest.src as string]
   rest.src = rest.imagelist[displayIndex]
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (callerId == rest.id) {
       setDisplayIndex(overlayIndex)
