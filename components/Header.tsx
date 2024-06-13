@@ -80,7 +80,11 @@ const Header = () => {
                 <Image src="/static/images/logo.svg" width="200" height="21" alt="logo" priority />
               </div>
               <div className="mr-3 block md:hidden">
-                <Image src="/static/favicons/logo-sm.svg" width="44" height="44" alt="logo" priority />
+                <Image src="/static/favicons/logo-sm.svg"
+                       width="44"
+                       height="44"
+                       alt="logo"
+                       priority />
               </div>
               {typeof siteMetadata.headerTitle === 'string' ? (
                 <div className="hidden h-6 text-2xl font-semibold sm:block">
