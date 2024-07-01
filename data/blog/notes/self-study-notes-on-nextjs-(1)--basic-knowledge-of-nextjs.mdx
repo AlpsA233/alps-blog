@@ -1,0 +1,144 @@
+---
+title: Self-study Notes on Next.js (1)-- Basic Knowledge of Next.js
+date: '2024-06-30'
+tags: ['React', 'NextJs', 'Web Development']
+draft: true
+summary: About the basic knowledge and terminology explanation of Next.js, and quickly creating a Next.js project
+---
+
+# Introduction
+
+1. Next.js is a framework based on React, providing server-side rendering (SSR) and static site generation (SSG) capabilities.
+
+> ## SSR
+> Server-side rendering is the process of generating HTML content on the server side and sending it to the client browser for display. Each time a user requests a page, the server generates the latest HTML content.
+>
+> ### Advantages
+> - SEO friendly: The server generates HTML content, making it easier for search engines to crawl and index the pages.
+> - Real-time data: With each request producing the most up-to-date content, this is ideal for pages requiring real-time updates.
+> ### Disadvantages
+> - Performance overhead: Generating HTML for each request can increase server load and potentially affect performance.
+> - Response time: Waiting for the server to generate content may slightly lengthen page load times.
+>
+> ## SSG
+> Static site generation refers to generating HTML content during the build process and deploying it as static files to the server. When a user requests a page, the server directly returns the pre-generated static HTML file.
+> ### Advantages
+> - Advantages Superior performance: Static files can be cached and distributed via CDN, resulting in fast page loading speed and superior performance.
+> - Reduced server load: Since static files are pre-generated, the server does not need to generate content with each request, reducing server load.
+> - SEO friendly: Similar to SSR, static HTML content is search engine friendly.
+> ### Disadvantages
+> - Content update delays: As static files are generated during build time, updating content requires rebuilding and redeployment, suitable for pages with infrequent content changes.
+
+2. Next.js simplifies the development of React applications, providing features such as file system routing, API routing, and data fetching.
+
+# Installation & Create Next.js Project
+
+1. Install Node.js and npm (Node Package Manager) on your computer.
+
+2. Open your terminal or command prompt and navigate to the directory where you want to create your Next.js project.
+
+3. Run the following command to create a new Next.js project:
+
+```bash
+   npx create-next-app@latest my-nextjs-app
+   cd my-nextjs-app
+   npm run dev
+```
+
+-  `npx create-next-app@latest my-nextjs-app`: This command creates a new Next.js project named "my-nextjs-app" in the current directory.
+> ![npx-create-next-app](/static/images/note/npx-create-next-app.png)
+> - During the process of creating a new project, you'll be asked to make several choices.
+> - src/: Do you want to use a 'src' directory in your project? By default, all files are placed in the root directory, but enabling a 'src' directory can make development more organized.
+> - App Router: Do you want to use App Router for routing?
+> - @/*: Would you like to customize the default import alias? This is usually not necessary for most projects.
+
+-  `cd my-nextjs-app`: This command changes the current directory to the newly created project.
+- `npm run dev`: This command starts the development server and runs the Next.js application.
+
+4. Open your browser and go to http://localhost:3000. You should see a "NEXT.JS" message.
+
+![hello-next-js](/static/images/note/my-nextjs-app.png)
+
+### Learn More
+
+#### How to implement SSR and SSG using Next.js
+
+Next.js offers two specialized data fetching methods:`getServerSideProps` and `getStaticProps`. These are used to implement Server-Side Rendering (SSR) and Static Site Generation (SSG) respectively. The difference in their function names reflects their distinct rendering approaches. Let's dive into how these methods work and what sets them apart.
+
+1. getServerSideProps
+
+- What is getServerSideProps?
+
+`getServerSideProps` is a special asynchronous function in Next.js. It's designed to fetch data on each request and generate HTML content on the server side. This approach ensures that the page always displays the most up-to-date information every time it's requested.
+
+- How to use getServerSideProps?
+
+You can export the 'getServerSideProps' function from your page component. Next.js will then call this function every time the page is requested. The data returned by this function is passed as 'props' to the page component, allowing you to use the latest data in your render.
+
+```javascript
+// pages/index.js
+
+export async function getServerSideProps() {
+  // Get the data here
+  const res = await fetch('https://api.xxxxx.com/data');
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default function Home({ data }) {
+  return (
+    <div>
+      <h1>Server-Side Rendering</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+}
+```
+
+- How does getServerSideProps work?
+    1. Every time a page is requested, Next.js calls the 'getServerSideProps' function on the server side.
+    2. This function fetches the necessary data and returns an object containing 'props'.
+    3. Next.js then uses this returned data to generate the HTML content, which is sent to the client.
+
+2. getStaticProps
+
+- What is getStaticProps?
+
+`getStaticProps` is another special asynchronous function in Next.js. It's designed to fetch data during the build process and generate static HTML content. This approach ensures that the page always displays the same content, regardless of the user's request.
+
+- How to use getStaticProps?
+You can export the 'getStaticProps' function from your page component. Next.js will then call this function during the build process. The data returned by this function is passed as 'props' to the page component, allowing you to use the latest data in your render.
+```javascript
+// pages/index.js
+
+export async function getStaticProps() {
+  // Get the data here
+  const res = await fetch('https://api.xxxxx.com/data');
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 10, // Optional, the static page is regenerated every 10 seconds
+  };
+}
+
+export default function Home({ data }) {
+  return (
+    <div>
+      <h1>Static Site Generation</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+}
+```
+
+3. summary
+
+In most cases, you don't need any extra configuration. Simply export either the 'getServerSideProps' or 'getStaticProps' function from your page component. Next.js will automatically handle these functions and generate the appropriate HTML content based on their return values.
