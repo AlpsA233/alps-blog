@@ -1,7 +1,7 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: 'Alps2333™',
-  author: 'Alps(A阿尔)',
+  author: 'Alps',
   headerTitle: '',
   description: 'A阿尔的个人小站',
   language: 'en-us',
